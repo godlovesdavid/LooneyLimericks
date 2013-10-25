@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>Looney Limericks</title>
+</head>
+
+<body>
+	<div class="left">
+		<?php 
+			foreach($data['requestedPoems'] as $poem)
+				print "<h1>" . $poem['title'] . "</h1><h2>" . $poem['author'] 
+				. "</h2><p>" . $poem['content'] . "</p><p>" . $poem['rating'] . "</p>"; 
+		?>
+	</div>
+
+	<div class="right">
+		<h3>Poems</h3>
+		<p>
+			<a href="index.php?form">submit your poem</a> <a
+				href="index.php?main&e=featured">featured</a> <a
+				href="index.php?main&e=random">random</a> <a href="index.php?main&e=top10">top10</a>
+			<a href="index.php?main&e=newest">newest</a>
+		</p>
+		<p></p>
+	</div>
+</body>
+</html>

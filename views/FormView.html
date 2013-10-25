@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Looney Limericks</title>
+<script>
+	function validateForm()
+	{
+		var name = document.forms["poem"]["title"].value;
+		var author = document.forms["poem"]["author"].value;
+		var content = document.forms["poem"]["content"].value;
+		var lines = content.split('\n');
+		if (name == null || name == "" || author == null || author == ""
+				|| content == null || content == "")
+			alert("name/author/content must be filled out");
+		else if (lines.length != 5)
+			alert("content should have 5 lines");
+		else if (lines[0].length > 30 || lines[1].length > 30
+				|| lines[2].length > 30 || lines[3].length > 30
+				|| lines[4].length > 30)
+			alert("content length should have up to 30 characters for each line");
+		else
+			return true;
+		return false;
+	}
+</script>
+</head>
+
+<body>
+	<h1>Poem Submission Form</h1>
+	<form name="poem" action="index.php?form&check"
+		onsubmit="return validateForm()" method="post">
+		<p>
+			<input name="title" value="title" maxlength="30" id="title" /> <br /> <input
+				name="author" value="author" maxlength="30" /> <br />
+			<textarea name="content" cols="80" rows="5">content</textarea>
+			<br /> <input type="submit" />
+		</p>
+	</form>
+	<?php print $data; ?>
+</body>
+
+</html>
