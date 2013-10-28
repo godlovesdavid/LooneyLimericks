@@ -1,4 +1,5 @@
 <?php
+//controller
 abstract class Controller
 {
 	abstract static function receiveCommands(array $args);

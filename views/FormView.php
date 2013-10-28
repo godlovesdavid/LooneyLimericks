@@ -1,4 +1,5 @@
 <?php
+//form view
 class FormView
 {
 	static function display($data)

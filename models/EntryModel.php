@@ -1,4 +1,5 @@
 <?php
+//entry model
 class EntryModel
 {
 	static function getData($id)

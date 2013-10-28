@@ -1,4 +1,5 @@
 <?php
+//form controller
 class FormController
 {
 	static function receiveCommands(array $args)

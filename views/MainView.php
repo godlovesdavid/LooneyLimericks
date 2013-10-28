@@ -1,4 +1,5 @@
 <?php
+//main view
 class MainView
 {
 	static function display($data)
