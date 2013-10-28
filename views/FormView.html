@@ -3,6 +3,7 @@
 
 <head>
 <title>Looney Limericks</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
 <script>
 	function validateForm()
 	{
@@ -27,17 +28,37 @@
 </head>
 
 <body>
-	<h1>Poem Submission Form</h1>
-	<form name="poem" action="index.php?form&check"
-		onsubmit="return validateForm()" method="post">
+	<div id="head">
+		<h1>Looney Limericks</h1>
+	</div>
+	<div id="left" align="center">
 		<p>
-			<input name="title" value="title" maxlength="30" id="title" /> <br /> <input
-				name="author" value="author" maxlength="30" /> <br />
-			<textarea name="content" cols="80" rows="5">content</textarea>
-			<br /> <input type="submit" />
+			Poems<br /> <a href="index.php?form">Submit your poem</a><br /> <a
+				href="index.php?main&e=featured">Featured</a><br /> <a
+				href="index.php?main&e=random">Random</a><br /> <a
+				href="index.php?main&e=top10">Top 10</a><br /> <a
+				href="index.php?main&e=newest">Newest</a><br />
 		</p>
-	</form>
-	<?php print $data; ?>
+	</div>
+	<div id="center" align="center">
+		<h1>Poem Submission Form</h1>
+		<form name="poem" action="index.php?form&action=checkform"
+			onsubmit="return validateForm()" method="post">
+			<p>
+				<input name="title" value="Title" maxlength="30" id="title" /> <br /> <input
+					name="author" value="Author" maxlength="30" /> <br />
+				<textarea name="content" cols="80" rows="5">Your poem</textarea>
+				<br /> <input type="submit" value ="submit poem"/>
+			</p>
+		</form>
+		<?php print $data['checkresult']; ?>
+	</div>
+	<div id="right" align="center">
+		<h3>All</h3>
+		<p>
+			<?php print $data['links']; ?>
+		</p>
+	</div>
 </body>
 
 </html>
