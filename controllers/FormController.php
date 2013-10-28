@@ -1,6 +1,7 @@
 <?php
 class FormController
 {
+//receive commands
 	static function receiveCommands(array $args)
 	{
 		// receives either no args or check as key
