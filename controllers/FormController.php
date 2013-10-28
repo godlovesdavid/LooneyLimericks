@@ -1,18 +1,26 @@
 <?php
-class FormController
+
+//form controller that handles poem submission form and events.
+class FormController extends Controller
 {
-//receive commands
+	//receive commands from URL
 	static function receiveCommands(array $args)
 	{
-		// receives either no args or check as key
-		self::fetchData($args);
+		if (isset($args['action']))
+			self::fetchData($args['action']);
+		else
+			self::fetchData('none');
 		self::showData(self::$data);
 	}
+	
+	//gets data from entry model
 	static function fetchData($id)
 	{
 		include 'models/EntryModel.php';
 		self::$data = EntryModel::getData($id);
 	}
+	
+	//shows data in form view from entry model
 	static function showData($data)
 	{
 		include 'views/FormView.php';
