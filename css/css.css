@@ -49,16 +49,19 @@
 #left {
 	float: left;
 	width: 20%;
+	text-align: center;
 }
 
 #center {
 	float: left;
 	width: 60%;
+	text-align: center;
 }
 
 #right {
-	float: left;
+	float: right;
 	width: 20%;
+	text-align: center;
 }
 
 a {
