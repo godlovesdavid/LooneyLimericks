@@ -1,3 +1,6 @@
+https://github.com/godlovesdavid/LooneyLimericks
+
+Issues
 1. figure out how to get newest poem - David Hsu
 2. figure out how to clean poems - David Hsu
 3. change table event every 10 minutes - David Hsu
@@ -5,4 +8,4 @@
 5. generate top 10 poems - David Hsu
 6. finish rater system - David Hsu
 
-NOTE: the name showed up on commit may say "Roger Hsu". This is actually David Hsu. I'm working on my dad's computer.
+NOTE: the name showed up on first commit may say "Roger Hsu". This is actually David Hsu. I'm working on my dad's computer.
