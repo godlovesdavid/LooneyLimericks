@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
 
 //abstract class controller.
-=======
-//controller
->>>>>>> cleanpoemsondb
 abstract class Controller
 {
 	//receive commands from URL arguments.

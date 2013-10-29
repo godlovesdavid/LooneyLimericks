@@ -1,12 +1,7 @@
 <?php
-<<<<<<< HEAD
 
 //form controller that handles poem submission form and events.
 class FormController extends Controller
-=======
-//form controller
-class FormController
->>>>>>> cleanpoemsondb
 {
 	//receive commands from URL
 	static function receiveCommands(array $args)

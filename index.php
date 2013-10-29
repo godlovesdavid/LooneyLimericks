@@ -3,14 +3,14 @@ startSession();
 includeThings();
 passArgsToController(getArgsFromURL());
 
-//starts user session.
+// starts user session.
 function startSession()
 {
 	if (! isset($_SESSION))
 		session_start();
 }
 
-//include things like configuration constants.
+// include things like configuration constants.
 function includeThings()
 {
 	include 'config/config.php';
@@ -23,14 +23,14 @@ function includeThings()
 		include $filename;
 }
 
-//gets the arguments from URL.
+// gets the arguments from URL.
 function getArgsFromURL()
 {
 	parse_str($_SERVER['QUERY_STRING'], $args);
 	return $args;
 }
 
-//passes arguments to requeseted controller.
+// passes arguments to requeseted controller.
 function passArgsToController($args)
 {
 	reset($args);
@@ -41,7 +41,7 @@ function passArgsToController($args)
 	$controllername::receiveCommands($args);
 }
 
-//global variable for authentication
+// global variable for authentication
 $authenticate;
 
 ?>

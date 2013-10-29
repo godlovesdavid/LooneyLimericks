@@ -1,0 +1,108 @@
+.rating_stars {
+	background: url('starblank.png') no-repeat;
+	float: left;
+	height: 28px;
+	padding: 2px;
+	width: 32px;
+}
+
+.norating_stars {
+	background: url('starblank.png') no-repeat;
+	float: left;
+	height: 28px;
+	padding: 2px;
+	width: 32px;
+}
+
+.rating_voted {
+	background: url('starvoted.png') no-repeat;
+}
+
+.rating_halfvoted {
+	background: url('starhalfvoted.png') no-repeat;
+}
+
+.rating_over {
+	background: url('starover.png') no-repeat;
+}
+
+.total_votes {
+	background: #FFFFFF;
+	top: 58px;
+	left: 0;
+	padding: 5px;
+	position: absolute;
+}
+
+.item {
+	font: 10px verdana, sans-serif;
+	margin: 0 auto 40px auto;
+	width: 180px;
+	height: 200px;
+}
+
+#head {
+	color: #61C2CB;
+	text-align: center;
+}
+
+#left {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+#center {
+	float: left;
+	width: 60%;
+	text-align: center;
+}
+
+#right {
+	float: right;
+	width: 20%;
+	text-align: center;
+}
+
+a {
+	color: #F27022;
+	text-decoration: none
+}
+
+textarea {
+	font-family: Helvetica;
+	font-size: 1em
+}
+
+ul {
+	font-family: Helvetica;
+	font-size: 1em;
+	list-style-type: square;
+	list-style-position: outside
+}
+
+body {
+	background-color: #E4F6F8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 2em;
+	color: #FDB813;
+	margin-top: 0.1em;
+	margin-right: 0.1em;
+	margin-bottom: 0.1em;
+	margin-left: 0.1em
+}
+
+h2 {
+	color: #FDB813
+}
+
+h3 {
+	font-family: Helvetica;
+	font-size: 1.15em;
+	color: #00275E
+}
+
+h4 {
+	color: #00275E
+}

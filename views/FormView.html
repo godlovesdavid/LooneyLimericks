@@ -25,13 +25,14 @@
 		return false;
 	}
 </script>
+<meta charset='utf-8'>
 </head>
 
 <body>
 	<div id="head">
 		<h1>Looney Limericks</h1>
 	</div>
-	<div id="left" align="center">
+	<div id="left">
 		<p>
 			Poems<br /> <a href="index.php?form">Submit your poem</a><br /> <a
 				href="index.php?main&e=featured">Featured</a><br /> <a
@@ -40,7 +41,7 @@
 				href="index.php?main&e=newest">Newest</a><br />
 		</p>
 	</div>
-	<div id="center" align="center">
+	<div id="center">
 		<h1>Poem Submission Form</h1>
 		<form name="poem" action="index.php?form&action=checkform"
 			onsubmit="return validateForm()" method="post">
@@ -53,7 +54,7 @@
 		</form>
 		<?php print $data['checkresult']; ?>
 	</div>
-	<div id="right" align="center">
+	<div id="right">
 		<h3>All</h3>
 		<p>
 			<?php print $data['links']; ?>

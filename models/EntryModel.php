@@ -1,8 +1,7 @@
 <?php
-//entry model
 class EntryModel
 {
-	//gets data from arguments.
+	// gets data from arguments.
 	static function getData($id)
 	{
 		if ($id == 'rate')
@@ -29,7 +28,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//connect to database.
+	// connect to database.
 	static function connectToDB()
 	{
 		global $authenticate;
@@ -74,7 +73,7 @@ class EntryModel
 		return $poem;
 	}
 	
-	//rate action call that saves a user rating.
+	// rate action call that saves a user rating.
 	static function rate()
 	{
 		header("Pragma: nocache");
@@ -98,7 +97,7 @@ class EntryModel
 		return self::appendRating($data);
 	}
 	
-	//get list of poem entry links in html.
+	// get list of poem entry links in html.
 	static function getLinks()
 	{
 		$result = mysqli_query(self::connectToDB(), 
@@ -110,18 +109,23 @@ class EntryModel
 		return $links;
 	}
 	
-	//get featured poem.
+	// get featured poem.
 	static function getFeatured()
 	{
-		$data['header'] = 'Featured Poem';
 		$data['requestedPoems'][] = self::appendRating(
 			mysqli_fetch_assoc(
 				mysqli_query(self::connectToDB(), 
 					"select * from poems where featured=1")));
+		if (! isset($data['requestedPoems'][0]['title']))
+			$data = self::appendRating(
+				mysqli_fetch_assoc(
+					mysqli_query(self::connectToDB(), 
+						"select * from poems order by rand()")));
+		$data['header'] = 'Featured Poem';
 		return $data;
 	}
 	
-	//get random poem.
+	// get random poem.
 	static function getRandom()
 	{
 		$data['header'] = 'Random Poem';
@@ -132,7 +136,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//get top 10 poems.
+	// get top 10 poems.
 	static function getTop10()
 	{
 		$data['header'] = 'Top 10 Poems';
@@ -143,7 +147,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//get newest poem.
+	// get newest poem.
 	static function getNewest()
 	{
 		$data['header'] = 'Newest Poem';
@@ -154,7 +158,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//get newest 10 poems.
+	// get newest 10 poems.
 	static function getNewest10()
 	{
 		$data['header'] = 'Newest 10 Poems';
@@ -165,7 +169,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//get requested poem.
+	// get requested poem.
 	static function getEntry($id)
 	{
 		$data['header'] = '';
@@ -176,7 +180,7 @@ class EntryModel
 		return $data;
 	}
 	
-	//check form after submission, and submit it.
+	// check form after submission, and submit it.
 	static function checkFormAndSubmitPoem()
 	{
 		list($a1, $a2, $b1, $b2, $a3) = explode("\n", $_POST['content']);
@@ -193,7 +197,7 @@ class EntryModel
 		}
 	}
 	
-	//append real escape string to poem and adds it to db.
+	// append real escape string to poem and adds it to db.
 	static function enterData($data)
 	{
 		$id = null; // mysql will auto increment
@@ -214,7 +218,7 @@ class EntryModel
 		return false;
 	}
 	
-	//check if 2 lines rhyme.
+	// check if 2 lines rhyme.
 	static function doesRhyme($line1, $line2)
 	{
 		$words1 = preg_split('/\s+/', 
