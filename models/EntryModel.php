@@ -1,4 +1,5 @@
 <?php
+//entry model
 class EntryModel
 {
 	//gets data from arguments.
